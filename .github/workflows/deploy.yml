@@ -37,7 +37,7 @@ jobs:
         run: npm run build
 
       - name: Build Site
-        run: npm run build:site
+        run: npm run build
 
       - name: Ready to Upload
         run: |
