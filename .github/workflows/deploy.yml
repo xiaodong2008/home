@@ -33,15 +33,13 @@ jobs:
       - name: Install dependencies
         run: pnpm i
 
-      - name: Build Packages
-        run: npm run build
-
       - name: Build Site
         run: npm run build
 
       - name: Ready to Upload
         run: |
-          cp dist/index.html dist/404.html
+          mv dist _site
+          cp _site/index.html _site/404.html
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v2
