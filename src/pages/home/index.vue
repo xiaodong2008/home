@@ -12,7 +12,7 @@ onMounted(() => {
   <div class="home">
     <img :src="Banner" alt="Banner" />
     <h1 fade-in="200">Hi, I'm XiaoDong</h1>
-    <div>
+    <div class="list">
       <a>GitHub</a>
       <a>Twitter</a>
     </div>
@@ -22,10 +22,10 @@ onMounted(() => {
 <style scoped>
 .home {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-
 }
 
 img {
@@ -35,5 +35,10 @@ img {
   opacity: 0.3;
   position: absolute;
   z-index: -1;
+}
+
+.list {
+  display: flex;
+  gap: 20px;
 }
 </style>
