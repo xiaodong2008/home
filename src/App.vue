@@ -2,22 +2,43 @@
 </script>
 
 <template>
-
+  <router-view v-slot="{ Component }">
+    <Transition name="page" mode="out-in">
+      <component :is="Component" />
+    </Transition>
+  </router-view>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+@keyframes page-leave {
+  from {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(10px);
+  }
 }
 
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+.page-enter-active {
+  animation: page-enter 0.3s;
+}
+
+.page-leave-active {
+  animation: page-leave 0.3s;
 }
 </style>
