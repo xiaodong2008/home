@@ -1,5 +1,6 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -26,6 +27,27 @@ body,
   margin: 0;
   height: 100%;
   width: 100%;
+}
+
+#app {
+  transition: opacity 300ms;
+
+  &.fade {
+    opacity: 0;
+  }
+}
+
+*[fade-in] {
+  transform: translateY(0.5em);
+  opacity: 0;
+  transition:
+    transform 0.5s,
+    opacity 0.5s;
+
+  &[fade-in="true"] {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 body {
