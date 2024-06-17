@@ -17,6 +17,7 @@ a {
   color: white;
   text-decoration: inherit;
   cursor: pointer;
+  user-select: none;
 }
 a:after {
   content: "";

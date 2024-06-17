@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import Banner from '@/assets/banner.png';
 import { renderFadeIn } from '@/fadeIn';
+import { dom } from 'jsfast';
 import { onMounted } from 'vue';
 
 onMounted(() => {
   renderFadeIn();
+  dom.select(".list a")?.set("target", "_blank");
 });
 </script>
 
@@ -12,9 +14,11 @@ onMounted(() => {
   <div class="home">
     <img :src="Banner" alt="Banner" />
     <h1 fade-in="200">Hi, I'm XiaoDong</h1>
-    <div class="list">
-      <a>GitHub</a>
-      <a>Twitter</a>
+    <div class="list" fade-in="1200">
+      <a href="https://github.com/xiaodong2008">GitHub</a>
+      <a href="https://twitter.com/dy_xiaodong">Twitter</a>
+      <a href="https://xlog.xiaodong.moe">Blog</a>
+      <a href="mailto:hi@xiaodong.moe">Email</a>
     </div>
   </div>
 </template>
