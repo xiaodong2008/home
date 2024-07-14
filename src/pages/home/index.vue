@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Banner from '@/assets/banner.png';
+// import Banner from '@/assets/banner.png';
 import { renderFadeIn } from '@/fadeIn';
 import { dom } from 'jsfast';
 import { onMounted } from 'vue';
@@ -12,14 +12,14 @@ onMounted(() => {
 
 <template>
   <div class="home">
-    <img :src="Banner" alt="Banner" />
+    <!-- <img :src="Banner" alt="Banner" /> -->
     <h1 fade-in="200">Hi, I'm XiaoDong</h1>
-    <div class="list" fade-in="1200">
-      <a href="https://resume.xiaodong.moe/">About Me</a>
-      <a href="https://github.com/xiaodong2008">GitHub</a>
-      <a href="https://twitter.com/dy_xiaodong">Twitter</a>
-      <a href="https://xlog.xiaodong.moe">Blog</a>
-      <a href="mailto:hi@xiaodong.moe">Email</a>
+    <div class="list">
+      <a href="https://resume.xiaodong.moe/" fade-in="1200">About Me</a>
+      <a href="https://github.com/xiaodong2008" fade-in="1800">GitHub</a>
+      <a href="https://twitter.com/dy_xiaodong" fade-in="2400">Twitter</a>
+      <a href="https://xlog.xiaodong.moe" fade-in="3000">Blog</a>
+      <a href="mailto:hi@xiaodong.moe" fade-in="3600">Email</a>
     </div>
   </div>
 </template>
