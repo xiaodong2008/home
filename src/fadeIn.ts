@@ -26,7 +26,8 @@ export function renderFadeIn() {
     if (el.getAttr("fade-in-done")) continue;
     if (
       window.scrollY <= offset &&
-      window.scrollY + window.innerHeight > offset + el.get("offsetHeight")
+      window.scrollY + window.innerHeight >
+        offset + (el as FastjsDom<HTMLDivElement>).get("offsetHeight")
     ) {
       setTimeout(() => {
         el.setAttr("fade-in", "true");
