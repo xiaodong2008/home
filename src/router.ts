@@ -61,6 +61,7 @@ export function setupRouter(root: FastjsDom<any>, config: Config): Router {
   function resolveRouterLink(root: FastjsDom) {
     root.next("a")?.forEach((a: FastjsDom) => {
       if (!a.getAttr("href")?.startsWith("/")) return;
+      // @ts-expect-error
       a.addEvent("click", (dom, e) => {
         e.preventDefault();
         window.history.pushState({}, "", a.getAttr("href")!);
