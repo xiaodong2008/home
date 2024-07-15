@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       jsfast:
-        specifier: 1.0.0-beta.12
-        version: 1.0.0-beta.12
+        specifier: 1.0.0-beta.20
+        version: 1.0.0-beta.20
       vue:
         specifier: ^3.4.21
         version: 3.4.29(typescript@5.4.5)
@@ -569,8 +569,8 @@ packages:
   jsbn@0.1.1:
     resolution: {integrity: sha512-UVU9dibq2JcFWxQPA6KCqj5O42VOmAY3zQUfEKxU0KpTGXwNoCjkX1e13eHNvw/xPynt6pU0rZ1htjWTNTSXsg==}
 
-  jsfast@1.0.0-beta.12:
-    resolution: {integrity: sha512-0HYnYNGIgdS/+rPkGCX/trVI8psRNCHwwuSYPPeNjEOdEXpWdiYN6J1de8K1qZN3P/+/VsH8mFetPm591xSoXw==}
+  jsfast@1.0.0-beta.20:
+    resolution: {integrity: sha512-lXONJyXHPKougqBn4BufJ6TVS3/nPZlewrG0VeLFwPjhK9KYBN246XGQwqqKOer82Owt3JeNATKEJEqopJtmdQ==}
 
   json-schema-traverse@0.4.1:
     resolution: {integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==}
@@ -1345,7 +1345,7 @@ snapshots:
 
   jsbn@0.1.1: {}
 
-  jsfast@1.0.0-beta.12: {}
+  jsfast@1.0.0-beta.20: {}
 
   json-schema-traverse@0.4.1: {}
 
