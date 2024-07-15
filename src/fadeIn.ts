@@ -1,4 +1,4 @@
-import { FastjsDomList, dom } from "jsfast";
+import { FastjsDom, FastjsDomList, dom } from "jsfast";
 
 let calc = 0,
   first = true;

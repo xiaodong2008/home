@@ -1,4 +1,4 @@
-import { FastjsDom, dom } from "jsfast";
+import { type FastjsDom, dom } from "jsfast";
 
 import { renderFadeIn } from "./fadeIn";
 
