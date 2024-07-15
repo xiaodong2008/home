@@ -1,12 +1,17 @@
 import "./style.css";
 
-import App from "./App.vue";
-import { createApp } from "vue";
+import { FastjsDom, dom } from "jsfast";
+
+import Home from "./pages/home";
 import { renderFadeIn } from "./fadeIn";
-import { router } from "./router";
+import { setupRouter } from "./router";
 
-createApp(App).use(router).mount("#app");
+const root = dom.select<FastjsDom<HTMLDivElement>>("#app");
 
-router.afterEach(() => {
-  renderFadeIn();
-});
+setupRouter(root, {
+  pages: [Home],
+  notFound: Home,
+  hooks: {
+    afterNavigate: renderFadeIn,
+  },
+}).render(root);
