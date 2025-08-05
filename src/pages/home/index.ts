@@ -71,7 +71,7 @@ const page: Page = {
     }
   },
   template: html`
-    <div class="home flex-col gap-100 i-center">
+    <div class="home flex-col ph-20 gap-100 i-center">
       <div class="container w-full max-w-800 pv-100 gap-24 flex-col">
         <div class="header flex c-between">
           <div class="flex-col c-left">
