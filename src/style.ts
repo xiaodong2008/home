@@ -5,12 +5,19 @@ const styleFunctions = new Map<string, (className: string) => string | false>();
 const basicRules = [
   "flex,display: flex;",
   "flex-col,display: flex;flex-direction: column;",
-  "c-left,justify-content: flex-start;align-items: center;",
-  "c-right,justify-content: flex-end;align-items: center;",
-  "c-center,justify-content: center;align-items: center;",
-  "c-between,justify-content: space-between;align-items: center;",
-  "c-around,justify-content: space-around;align-items: center;",
+  "c-left,justify-content: flex-start;",
+  "c-right,justify-content: flex-end;",
+  "c-center,justify-content: center;",
+  "c-between,justify-content: space-between;",
+  "c-around,justify-content: space-around;",
+  "i-center,align-items: center;",
   "rounded,border-radius: 100%;",
+  "w-full,width: 100%;",
+  "h-full,height: 100%;",
+  "nowrap,white-space: nowrap;",
+  "wrap,flex-wrap: wrap;",
+  "grow,flex-grow: 1;",
+  "block,display: block;",
 ]
 
 for (const combination of basicRules) {
@@ -26,6 +33,30 @@ const paramRules = [
   "w-[param],width: [param](px);",
   "h-[param],height: [param](px);",
   "wh-[param],width: [param](px);height: [param](px);",
+  "max-w-[param],max-width: [param](px);",
+  "pv-[param],padding-top: [param](px);padding-bottom: [param](px);",
+  "ph-[param],padding-left: [param](px);padding-right: [param](px);",
+  "m-[param],margin: [param](px);",
+  "mv-[param],margin-top: [param](px);margin-bottom: [param](px);",
+  "mh-[param],margin-left: [param](px);margin-right: [param](px);",
+  "mt-[param],margin-top: [param](px);",
+  "mb-[param],margin-bottom: [param](px);",
+  "ml-[param],margin-left: [param](px);",
+  "mr-[param],margin-right: [param](px);",
+  "p-[param],padding: [param](px);",
+  "pl-[param],padding-left: [param](px);",
+  "pr-[param],padding-right: [param](px);",
+  "pt-[param],padding-top: [param](px);",
+  "pb-[param],padding-bottom: [param](px);",
+  "bl-[param],border-left: [param](px) solid;",
+  "br-[param],border-right: [param](px) solid;",
+  "bt-[param],border-top: [param](px) solid;",
+  "bt-[param]-dash,border-top: [param](px) dashed;",
+  "bb-[param],border-bottom: [param](px) solid;",
+  "b-[param],border: [param](px) solid;",
+  "bc-[param],border-color: [param];",
+  "lh-[param],line-height: [param](px);",
+  "bgc-[param],background-color: [param];",
 ]
 
 for (const combination of paramRules) {
@@ -55,6 +86,23 @@ export function compileStyle(dom: FastjsDom) {
   let styles = "";
 
   for (let className of classes) {
+    // search \'.+\' in className
+    const temps = className.match(/\<.+\>/g);
+    if (temps) {
+      temps.forEach((temp, index) => {
+        className = className.replace(temp, `{temp:${index}}`);
+      });
+    }
+    console.log("after temp", className);
+
+    const vars = className.match(/var\((.*)\)/g);
+    if (vars) {
+      vars.forEach((_var, index) => {
+        className = className.replace(_var, `{var:${index}}`);
+      });
+    }
+    console.log("after var", className);
+
     let [classCompiled, classKey] = ["", ""]
     for (let key = 0; key < className.split("-").length; key++) {
       if (key !== 0) {
@@ -82,8 +130,19 @@ export function compileStyle(dom: FastjsDom) {
     const style = styleFunctions.get(classKey);
     if (!style) continue;
 
-    const css = style(classCompiled);
+    let css = style(classCompiled);
     if (!css) continue;
+    // replace {temp-0} with 'temp-0'
+    if (temps) {
+      temps.forEach((temp, index) => {
+        css = (css as string).replace(`{temp:${index}}`, temp.replace(/<|>/g, ""));
+      });
+    }
+    if (vars) {
+      vars.forEach((_var, index) => {
+        css = (css as string).replace(`{var:${index}}`, _var);
+      });
+    }
 
     styles += css;
   }

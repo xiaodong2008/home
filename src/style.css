@@ -21,7 +21,7 @@ h1 {
 
 a {
   font-weight: 500;
-  color: white;
+  color: inherit;
   text-decoration: inherit;
   cursor: pointer;
   user-select: none;
@@ -31,7 +31,7 @@ a:after {
   display: block;
   width: 0;
   height: 2px;
-  background: white;
+  background: var(--primary-color);
   transition: width 0.3s;
 }
 a:hover:after {
@@ -71,7 +71,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background: rgb(236, 236, 236);
+  background: rgb(248, 248, 248);
 }
 
 h1 {
