@@ -5,9 +5,11 @@ let calc = 0,
 export function renderFadeIn() {
   const fadeInElements = dom
     .select<FastjsDomList>("*[fade-in]")
-    .filter((el) => {
+    ?.filter((el) => {
       return el.getAttr("fade-in") !== "true";
     });
+
+  if (!fadeInElements) return;
 
   for (const el of fadeInElements) {
     let params = el
@@ -27,7 +29,7 @@ export function renderFadeIn() {
     if (
       window.scrollY <= offset &&
       window.scrollY + window.innerHeight >
-        offset + (el as FastjsDom<HTMLDivElement>).get("offsetHeight")
+      offset + (el as FastjsDom<HTMLDivElement>).get("offsetHeight")
     ) {
       setTimeout(() => {
         el.setAttr("fade-in", "true");
