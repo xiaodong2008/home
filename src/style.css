@@ -26,6 +26,9 @@ a {
   cursor: pointer;
   user-select: none;
 }
+a.disable-hover-underline:after {
+  display: none;
+}
 a:after {
   content: "";
   display: block;

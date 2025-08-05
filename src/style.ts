@@ -18,6 +18,7 @@ const basicRules = [
   "wrap,flex-wrap: wrap;",
   "grow,flex-grow: 1;",
   "block,display: block;",
+  "underline,text-decoration: underline;",
 ]
 
 for (const combination of basicRules) {
@@ -57,6 +58,8 @@ const paramRules = [
   "bc-[param],border-color: [param];",
   "lh-[param],line-height: [param](px);",
   "bgc-[param],background-color: [param];",
+  "max-w-[param],max-width: [param](px);",
+  "max-h-[param],max-height: [param](px);",
 ]
 
 for (const combination of paramRules) {

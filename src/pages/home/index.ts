@@ -20,7 +20,11 @@ const achievements = [
   "HKCERT CTF 2022 Cyber Defense Competition,6th place",
   "HKIRC 2023 Cybersecurity Challenge,Top 10",
   "Hong Kong Python Application Robot Programming Competition,Second Prize",
-  "HKIRC 2023 Cybersecurity Challenge,Top 1",
+  "Hong Kong EDB MVPA60 Application Design Competition,Merit Award",
+  "HKCERT CTF 2024 Cyber Defense Competition Preliminaries (Open Category),3rd runner-up",
+  "HKCERT CTF 2024 Cyber Defense Competition Finals (Open Category),1st runner-up",
+  "AiTLE x CISCO Hong Kong-Macau Youth Cyber Skills Competition 2025 Finals,Gold Award",
+  "WorldSkills Hong Kong 2025 (Web Technologies),Champion",
 ];
 
 function randomColor() {
@@ -57,9 +61,9 @@ const page: Page = {
       const [achievement, place] = achievements[i].split(",");
       const span = dom.newEl("div").html(`
         <div class="flex gap-16 i-center">
+          <span class="dot size-12 rounded wh-6 bgc-[var(--primary-color)]"></span>
           <span class="size-16 weight-600">${achievement}</span>
-          <span class="grow bt-1-dash bc-[#e0e0e0]"></span>
-          <span class="size-16 color-[gray]">${place}</span>
+          <span class="size-16 color-[gray] nowrap ml-[auto]">${place}</span>
         </div>
       `);
       span.set("className", ``);
@@ -76,9 +80,10 @@ const page: Page = {
                 <span class="size-28 color-[black] weight-[bold]">XiaoDong</span>
                 <span class="size-20 color-[var(--primary-color)]">xiaodong2008</span>
               </div>
-              <span class="pt-8 block">
-                I'm a software engineer with a passion for building web
-                applications.
+              <span class="pt-8 block max-w-600">
+                I'm a software engineer with a passion for building
+                applications. Currently a student in Hong Kong Secondary
+                School, also having a full-time job as a software engineer in ShenZhen.
               </span>
               <div class="titles flex gap-8 wrap i-center"></div>
             </div>
@@ -93,7 +98,7 @@ const page: Page = {
         </div>
         <div class="bottom flex c-between mt-80">
           <span class="size-16 color-[#d4d4d4]">
-            © 2025 xiaodong2008 & fastjs
+            © 2025 xiaodong2008 & <a href="https://github.com/fastjs-team/core" class="underline disable-hover-underline" target="_blank">fastjs</a>
           </span>
           <span class="flex gap-16 size-16 color-[var(--primary-color)]">
             <a href="https://github.com/xiaodong2008" target="_blank">GitHub</a>
