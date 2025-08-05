@@ -1,6 +1,7 @@
 import { type FastjsDom, dom } from "jsfast";
 
 import { renderFadeIn } from "./fadeIn";
+import { compileStyle } from "./style";
 
 export interface Page {
   path: string;
@@ -55,6 +56,7 @@ export function setupRouter(root: FastjsDom<any>, config: Config): Router {
       isNavigating = false;
       resolveRouterLink(root);
       renderFadeIn();
+      compileStyle(root);
     }
   };
 
@@ -84,7 +86,7 @@ export function setupRouter(root: FastjsDom<any>, config: Config): Router {
   };
 
   const router: Router = {
-    navigate: () => {},
+    navigate: () => { },
     render: resolveRouterLink,
     location: {
       path: "",

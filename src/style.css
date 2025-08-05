@@ -1,27 +1,22 @@
-body::before {
-  content: "";
-  position: absolute;
-  opacity: 0.5;
-  height: 100%;
-  width: 100%;
-  background-image: url("/banner.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 :root {
   font-family: "Source Sans Pro", Helvetica, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+
+  --text-color: #213547;
+  --primary-color: #007bff;
 }
 
 #router {
   height: 100%;
 }
 
+body {
+  color: var(--text-color);
+}
+
 h1 {
-  color: rgba(255, 255, 255, 0.87);
+  /* color: rgba(255, 255, 255, 0.87); */
 }
 
 a {
@@ -62,9 +57,7 @@ body,
 *[fade-in] {
   transform: translateY(0.5em);
   opacity: 0;
-  transition:
-    transform 0.5s,
-    opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
 
   &[fade-in="true"] {
     transform: translateY(0);
@@ -78,7 +71,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background: gray;
+  background: rgb(236, 236, 236);
 }
 
 h1 {
@@ -112,7 +105,7 @@ button:focus-visible {
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  text-align: center;
+  /* text-align: center; */
 }
 
 @media (prefers-color-scheme: light) {
