@@ -1,25 +1,42 @@
-import "./style.css";
+import "./style.scss";
 
 import { FastjsDom } from "jsfast";
 import { Page } from "@/router";
+
+const html = (strings: TemplateStringsArray, ...values: any[]) => {
+  return strings.reduce((acc, str, i) => {
+    return acc + str + (values[i] || "");
+  }, "");
+};
 
 const page: Page = {
   path: "/",
   load: (root) => {
     root.next<FastjsDom<HTMLAnchorElement>>(".list a")?.set("target", "_blank");
   },
-  template: `
+  template: html`
     <div class="home">
-      <h1 fade-in="200">Hi, I'm XiaoDong</h1>
-      <div class="list">
-        <a href="https://resume.xiaodong.moe/" fade-in="1200">About Me</a>
-        <a href="https://github.com/xiaodong2008" fade-in="1800">GitHub</a>
-        <a href="https://twitter.com/dy_xiaodong" fade-in="2400">Twitter</a>
-        <a href="https://xlog.xiaodong.moe" fade-in="3000">Blog</a>
-        <a href="mailto:hi@xiaodong.moe" fade-in="3600">Email</a>
+      <div class="container">
+        <div class="content flex">
+          <div class="flex-col c-left">
+            <div class="title">
+              <div class="name flex c-left gap-8">
+                <span class="size-28 weight-[bold]">XiaoDong</span>
+                <span class="size-20 color-[gray]">xiaodong2008</span>
+              </div>
+              <p>
+                I'm a software engineer with a passion for building web
+                applications.
+              </p>
+            </div>
+          </div>
+          <div class="avatar">
+            <img src="/avatar.png" alt="avatar" class="rounded wh-100" />
+          </div>
+        </div>
       </div>
     </div>
-`,
+  `,
 };
 
 export default page;
