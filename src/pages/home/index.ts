@@ -25,6 +25,7 @@ const achievements = [
   "HKCERT CTF 2024 Cyber Defense Competition Finals (Open Category),1st runner-up",
   "AiTLE x CISCO Hong Kong-Macau Youth Cyber Skills Competition 2025 Finals,Gold Award",
   "WorldSkills Hong Kong 2025 (Web Technologies),Champion",
+  "iGEM Competition 2025 Paris,Repesentative of Guangzhou Medical University"
 ];
 
 function randomColor() {
@@ -98,7 +99,7 @@ const page: Page = {
         </div>
         <div class="bottom flex c-between mt-80">
           <span class="size-16 color-[#d4d4d4]">
-            © 2025 xiaodong2008 & <a href="https://github.com/fastjs-team/core" class="underline disable-hover-underline" target="_blank">fastjs</a>
+            © 2025 xiaodong2008 & <a href="https://github.com/fastjs-team/core" class="underline disable-hover-underline" target="_blank">Fastjs</a> & <a class="underline disable-hover-underline" href="https://codenav.dev" target="_blank">CodeNav</a>
           </span>
           <span class="flex gap-16 size-16 color-[var(--primary-color)]">
             <a href="https://github.com/xiaodong2008" target="_blank">GitHub</a>
