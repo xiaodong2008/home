@@ -64,9 +64,9 @@ const page: Page = {
         <div class="flex-col">
           <div class="flex c-left gap-8 i-center">
             <span class="dot size-12 rounded wh-6 bgc-[var(--primary-color)]"></span>
-            <span class="size-16 weight-600">${achievement}</span>
+            <span class="size-16 weight-600 break-word">${achievement}</span>
           </div>
-          <span class="size-16 color-[gray] nowrap ml-[14px]">${place}</span>
+          <span class="size-16 color-[gray] break-word ml-[14px]">${place}</span>
         </div>
       `);
       span.set("className", ``);

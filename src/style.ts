@@ -15,6 +15,7 @@ const basicRules = [
   "w-full,width: 100%;",
   "h-full,height: 100%;",
   "nowrap,white-space: nowrap;",
+  "break-word,word-break: break-word;",
   "wrap,flex-wrap: wrap;",
   "grow,flex-grow: 1;",
   "block,display: block;",
