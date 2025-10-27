@@ -17,15 +17,15 @@ const titles = [
 ];
 
 const achievements = [
-  "HKCERT CTF 2022 Cyber Defense Competition,6th place",
-  "HKIRC 2023 Cybersecurity Challenge,Top 10",
-  "Hong Kong Python Application Robot Programming Competition,Second Prize",
-  "Hong Kong EDB MVPA60 Application Design Competition,Merit Award",
-  "HKCERT CTF 2024 Cyber Defense Competition Preliminaries (Open Category),3rd runner-up",
-  "HKCERT CTF 2024 Cyber Defense Competition Finals (Open Category),1st runner-up",
-  "AiTLE x CISCO Hong Kong-Macau Youth Cyber Skills Competition 2025 Finals,Gold Award",
-  "WorldSkills Hong Kong 2025 (Web Technologies),Champion",
-  "iGEM Competition 2025 Paris,Repesentative of Guangzhou Medical University"
+  "HKCERT CTF 2022 Cyber Defense Competition;6th Place",
+  "HKIRC 2023 Cybersecurity Challenge;Top 10",
+  "Hong Kong Python Application Robot Programming Competition;Second Prize",
+  "Hong Kong EDB MVPA60 Application Design Competition;Merit Award",
+  "HKCERT CTF 2024 Cyber Defense Competition Preliminaries (Open Category);3rd Runner-up, Representative of Hong Kong University of Science and Technology",
+  "HKCERT CTF 2024 Cyber Defense Competition Finals (Open Category);1st Runner-up, Representative of Hong Kong University of Science and Technology",
+  "AiTLE x CISCO Hong Kong-Macau Youth Cyber Skills Competition 2025 Finals;Gold Award",
+  "WorldSkills Hong Kong 2025 (Web Technologies);The Champion in Hong Kong",
+  "iGEM Competition 2025 Paris;Repesentative of Guangzhou Medical University"
 ];
 
 function randomColor() {
@@ -59,12 +59,14 @@ const page: Page = {
 
     const achievementsContainer = root.next<FastjsDom<HTMLDivElement>>(".achievements");
     for (let i = 0; i < achievements.length; i++) {
-      const [achievement, place] = achievements[i].split(",");
+      const [achievement, place] = achievements[i].split(";");
       const span = dom.newEl("div").html(`
-        <div class="flex gap-16 i-center">
-          <span class="dot size-12 rounded wh-6 bgc-[var(--primary-color)]"></span>
-          <span class="size-16 weight-600">${achievement}</span>
-          <span class="size-16 color-[gray] nowrap ml-[auto]">${place}</span>
+        <div class="flex-col">
+          <div class="flex c-left gap-8 i-center">
+            <span class="dot size-12 rounded wh-6 bgc-[var(--primary-color)]"></span>
+            <span class="size-16 weight-600">${achievement}</span>
+          </div>
+          <span class="size-16 color-[gray] nowrap ml-[14px]">${place}</span>
         </div>
       `);
       span.set("className", ``);
